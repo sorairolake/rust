@@ -143,7 +143,7 @@ impl Duration {
     /// # Examples
     ///
     /// ```
-    /// #![feature(duration_constants_heavy)]
+    /// #![feature(duration_constants)]
     /// #![feature(duration_constructors)]
     /// use std::time::Duration;
     ///
@@ -153,7 +153,7 @@ impl Duration {
     /// assert_eq!(week.as_secs(), 604_800);
     /// assert_eq!(week.subsec_nanos(), 0);
     /// ```
-    #[unstable(feature = "duration_constants_heavy", issue = "TBD")]
+    #[unstable(feature = "duration_constants", issue = "57391")]
     // Also, #[unstable(feature = "duration_constructors", issue = "120301")]
     pub const WEEK: Duration = Duration::from_weeks(1);
 
@@ -164,7 +164,7 @@ impl Duration {
     /// # Examples
     ///
     /// ```
-    /// #![feature(duration_constants_heavy)]
+    /// #![feature(duration_constants)]
     /// #![feature(duration_constructors)]
     /// use std::time::Duration;
     ///
@@ -174,7 +174,7 @@ impl Duration {
     /// assert_eq!(day.as_secs(), 86400);
     /// assert_eq!(day.subsec_nanos(), 0);
     /// ```
-    #[unstable(feature = "duration_constants_heavy", issue = "TBD")]
+    #[unstable(feature = "duration_constants", issue = "57391")]
     // Also, #[unstable(feature = "duration_constructors", issue = "120301")]
     pub const DAY: Duration = Duration::from_days(1);
 
@@ -185,7 +185,7 @@ impl Duration {
     /// # Examples
     ///
     /// ```
-    /// #![feature(duration_constants_heavy)]
+    /// #![feature(duration_constants)]
     /// use std::time::Duration;
     ///
     /// let hour = Duration::HOUR;
@@ -194,7 +194,7 @@ impl Duration {
     /// assert_eq!(hour.as_secs(), 3600);
     /// assert_eq!(hour.subsec_nanos(), 0);
     /// ```
-    #[unstable(feature = "duration_constants_heavy", issue = "TBD")]
+    #[unstable(feature = "duration_constants", issue = "57391")]
     pub const HOUR: Duration = Duration::from_hours(1);
 
     /// The duration of one minute.
@@ -204,7 +204,7 @@ impl Duration {
     /// # Examples
     ///
     /// ```
-    /// #![feature(duration_constants_heavy)]
+    /// #![feature(duration_constants)]
     /// use std::time::Duration;
     ///
     /// let minute = Duration::MINUTE;
@@ -213,7 +213,7 @@ impl Duration {
     /// assert_eq!(minute.as_secs(), 60);
     /// assert_eq!(minute.subsec_nanos(), 0);
     /// ```
-    #[unstable(feature = "duration_constants_heavy", issue = "TBD")]
+    #[unstable(feature = "duration_constants", issue = "57391")]
     pub const MINUTE: Duration = Duration::from_mins(1);
 
     /// A duration of zero time.
