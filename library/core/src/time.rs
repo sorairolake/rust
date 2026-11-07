@@ -730,13 +730,17 @@ impl Duration {
     /// # Examples
     ///
     /// ```
+    /// #![feature(duration_extractors)]
+    /// #![feature(duration_constructors)]
     /// use std::time::Duration;
     ///
     /// let duration = Duration::from_days(40);
     /// assert_eq!(duration.as_weeks(), 5);
     /// ```
+    #[unstable(feature = "duration_extractors", issue = "TBD")]
+    #[must_use]
+    #[inline]
     pub const fn as_weeks(&self) -> u64 {
-        // `self.as_secs() / 604_800`
         self.as_secs() / (SECS_PER_MINUTE * MINS_PER_HOUR * HOURS_PER_DAY * DAYS_PER_WEEK)
     }
 
@@ -748,13 +752,16 @@ impl Duration {
     /// # Examples
     ///
     /// ```
+    /// #![feature(duration_extractors)]
     /// use std::time::Duration;
     ///
     /// let duration = Duration::from_hours(130);
     /// assert_eq!(duration.as_days(), 5);
     /// ```
+    #[unstable(feature = "duration_extractors", issue = "TBD")]
+    #[must_use]
+    #[inline]
     pub const fn as_days(&self) -> u64 {
-        // `self.as_secs() / 86400`
         self.as_secs() / (SECS_PER_MINUTE * MINS_PER_HOUR * HOURS_PER_DAY)
     }
 
@@ -766,13 +773,16 @@ impl Duration {
     /// # Examples
     ///
     /// ```
+    /// #![feature(duration_extractors_lite)]
     /// use std::time::Duration;
     ///
     /// let duration = Duration::from_mins(320);
     /// assert_eq!(duration.as_hours(), 5);
     /// ```
+    #[unstable(feature = "duration_extractors_lite", issue = "TBD")]
+    #[must_use]
+    #[inline]
     pub const fn as_hours(&self) -> u64 {
-        // `self.as_secs() / 3600`
         self.as_secs() / (SECS_PER_MINUTE * MINS_PER_HOUR)
     }
 
@@ -784,13 +794,16 @@ impl Duration {
     /// # Examples
     ///
     /// ```
+    /// #![feature(duration_extractors_lite)]
     /// use std::time::Duration;
     ///
     /// let duration = Duration::from_secs(320);
     /// assert_eq!(duration.as_mins(), 5);
     /// ```
+    #[unstable(feature = "duration_extractors_lite", issue = "TBD")]
+    #[must_use]
+    #[inline]
     pub const fn as_mins(&self) -> u64 {
-        // `self.as_secs() / 60`
         self.as_secs() / SECS_PER_MINUTE
     }
 
