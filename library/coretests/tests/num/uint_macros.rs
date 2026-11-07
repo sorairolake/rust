@@ -190,15 +190,14 @@ macro_rules! uint_module {
             }
 
             fn test_repeat_bits() {
-                const A: u128 = 0b0101_1111;
-                const B: u128 = 0b0101_1111;
-                const C: u128 = 0b0101_1111;
-                const D: u128 = 0b0101_1111;
+                const A: u128 = 0xAAAA_AAAA_AAAA_AAAA_AAAA_AAAA_AAAA_AAAA;
+                const B: u128 = 0x6DB6_DB6D_B6DB_6DB6_DB6D_B6DB_6DB6_DB6D;
+                const C: u128 = 0xCCCC_CCCC_CCCC_CCCC_CCCC_CCCC_CCCC_CCCC;
 
-                assert_eq_const_safe!($T: (0b1 as $T).repeat_bits(1), A as $T);
-                assert_eq_const_safe!($T: (0b1110 as $T).repeat_bits(2), B as $T);
-                assert_eq_const_safe!($T: (0b101 as $T).repeat_bits(3), C as $T);
-                assert_eq_const_safe!($T: (0b1100 as $T).repeat_bits(4), D as $T);
+                assert_eq_const_safe!($T: (0b1 as $T).repeat_bits(1), _1);
+                assert_eq_const_safe!($T: (0b1110 as $T).repeat_bits(2), A as $T);
+                assert_eq_const_safe!($T: (0b101 as $T).repeat_bits(3), B as $T);
+                assert_eq_const_safe!($T: (0b1100 as $T).repeat_bits(4), C as $T);
                 assert_eq_const_safe!($T: B.reverse_bits().reverse_bits(), B);
                 assert_eq_const_safe!($T: C.reverse_bits().reverse_bits(), C);
 
