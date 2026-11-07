@@ -844,6 +844,10 @@ macro_rules! uint_impl {
         /// assert_eq!(0b1100_u8.repeat_bits(4), 0b1100_1100);
         /// assert_eq!(0b1000_u8.repeat_bits(8), 0b1000);
         /// ```
+        #[unstable(feature = "uint_repeat_bits", issue = "none")]
+        #[must_use = "this returns the result of the operation, \
+                      without modifying the original"]
+        #[inline]
         pub const fn repeat_bits(self, len: u32) -> Self {
             assert_ne!(len, 0, "length of bit pattern must be at least 1");
 
