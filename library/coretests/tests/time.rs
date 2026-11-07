@@ -641,6 +641,12 @@ fn duration_const() {
     const FROM_NANOS_U128: Duration = Duration::from_nanos_u128(NANOS);
     assert_eq!(FROM_NANOS_U128, Duration::SECOND);
 
+    const MINUTES: u64 = Duration::SECOND.as_mins();
+    assert_eq!(MINUTES, 60);
+
+    const FROM_MINUTES: Duration = Duration::from_mins(1);
+    assert_eq!(FROM_MINUTES, 60 * Duration::SECOND);
+
     const MAX: Duration = Duration::new(u64::MAX, 999_999_999);
 
     const CHECKED_ADD: Option<Duration> = MAX.checked_add(Duration::SECOND);
