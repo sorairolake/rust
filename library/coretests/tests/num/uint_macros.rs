@@ -270,6 +270,12 @@ macro_rules! uint_module {
         }
 
         #[test]
+        #[should_panic = "length of bit pattern must be at least 1"]
+        fn test_repeat_bits_panic() {
+            let _ = A.repeat_bits(0);
+        }
+
+        #[test]
         fn test_isolate_highest_one() {
             const BITS: $T = <$T>::MAX;
             const MOST_SIG_ONE: $T = 1 << (<$T>::BITS - 1);
