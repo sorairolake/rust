@@ -193,11 +193,15 @@ macro_rules! uint_module {
                 const A: u128 = 0xAAAA_AAAA_AAAA_AAAA_AAAA_AAAA_AAAA_AAAA;
                 const B: u128 = 0x6DB6_DB6D_B6DB_6DB6_DB6D_B6DB_6DB6_DB6D;
                 const C: u128 = 0xCCCC_CCCC_CCCC_CCCC_CCCC_CCCC_CCCC_CCCC;
+                const D: u128 = 0x8C63_18C6_318C_6318_C631_8C63_18C6_318C;
+                const E: u128 = 0x0C30_C30C_30C3_0C30_C30C_30C3_0C30_C30C;
 
                 assert_eq_const_safe!($T: (0b1 as $T).repeat_bits(1), _1);
                 assert_eq_const_safe!($T: (0b1110 as $T).repeat_bits(2), A as $T);
                 assert_eq_const_safe!($T: (0b101 as $T).repeat_bits(3), B as $T);
                 assert_eq_const_safe!($T: (0b1100 as $T).repeat_bits(4), C as $T);
+                assert_eq_const_safe!($T: (0b1100 as $T).repeat_bits(5), D as $T);
+                assert_eq_const_safe!($T: (0b1100 as $T).repeat_bits(6), E as $T);
                 assert_eq_const_safe!($T: (0b1000 as $T).repeat_bits($T::BITS), 0b1000);
                 assert_eq_const_safe!($T: (0b1000 as $T).repeat_bits($T::BITS + 1), 0b1000);
             }
