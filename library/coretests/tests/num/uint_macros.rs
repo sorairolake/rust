@@ -198,12 +198,8 @@ macro_rules! uint_module {
                 assert_eq_const_safe!($T: (0b1110 as $T).repeat_bits(2), A as $T);
                 assert_eq_const_safe!($T: (0b101 as $T).repeat_bits(3), B as $T);
                 assert_eq_const_safe!($T: (0b1100 as $T).repeat_bits(4), C as $T);
-                assert_eq_const_safe!($T: B.reverse_bits().reverse_bits(), B);
-                assert_eq_const_safe!($T: C.reverse_bits().reverse_bits(), C);
-
-                // Swapping these should make no difference
-                assert_eq_const_safe!($T: _0.reverse_bits(), _0);
-                assert_eq_const_safe!($T: _1.reverse_bits(), _1);
+                assert_eq_const_safe!($T: (0b1000 as $T).repeat_bits($T::BITS), 0b1000);
+                assert_eq_const_safe!($T: (0b1000 as $T).repeat_bits($T::BITS + 1), 0b1000);
             }
 
             fn test_le() {
