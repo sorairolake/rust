@@ -917,7 +917,8 @@ macro_rules! uint_impl {
         /// is why `u8` is used.
         ///
         /// ```
-        /// assert_eq!(0b1110_u8.repeat_bits(2), 0b10_10_10_10);
+        /// assert_eq!(0b1_u8.repeat_bits(1), 0b1111_1111);
+        /// assert_eq!(0b1110_u8.repeat_bits(2), 0b1010_1010);
         /// assert_eq!(0b101_u8.repeat_bits(3), 0b01_101_101);
         /// assert_eq!(0b1100_u8.repeat_bits(4), 0b1100_1100);
         /// assert_eq!(0b1000_u8.repeat_bits(8), 0b1000);
